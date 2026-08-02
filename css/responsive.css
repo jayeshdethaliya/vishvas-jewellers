@@ -1,110 +1,68 @@
 /* ============================================
    Vishvas Jewellers – Responsive Styles
-   Breakpoints: 320, 480, 768, 992, 1200, 1440
+   Mobile-first base in style.css; enhance upward
    ============================================ */
 
-/* ---------- 1440px+ ---------- */
-@media (min-width: 1440px) {
+/* ---------- 480px+ ---------- */
+@media (min-width: 480px) {
+  .hero__actions .btn {
+    width: auto;
+    max-width: none;
+  }
+
+  .hero__subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.22em;
+  }
+}
+
+/* ---------- 768px+ ---------- */
+@media (min-width: 768px) {
   :root {
-    --container: 1320px;
+    --nav-height: 76px;
   }
 
-  .hero__title {
-    font-size: 4.25rem;
-  }
-}
-
-/* ---------- 1200px ---------- */
-@media (max-width: 1200px) {
-  .collections-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .container {
+    padding: 0 28px;
   }
 
-  .why-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: 1.5fr 1fr 1fr;
-  }
-
-  .footer-grid > :last-child {
-    grid-column: 1 / -1;
-  }
-}
-
-/* ---------- 992px (Tablet Landscape) ---------- */
-@media (max-width: 992px) {
   .section {
     padding: 80px 0;
   }
 
-  .navbar__nav {
-    display: none;
+  .hero {
+    min-height: 100vh;
+    padding-bottom: 56px;
   }
 
-  .navbar__cta {
-    display: none;
-  }
-
-  .navbar__toggle {
-    display: flex;
-  }
-
-  .hero__grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-    text-align: center;
+  .hero__title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
   }
 
   .hero__desc {
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero__actions {
-    justify-content: center;
+    font-size: 1.0625rem;
   }
 
   .hero__stats {
-    justify-content: center;
+    gap: 36px;
   }
 
-  .hero__glass-card {
-    position: relative;
-    bottom: auto;
-    left: auto;
-    margin-top: -40px;
-    display: inline-block;
+  .hero__stat-number {
+    font-size: 1.75rem;
   }
 
   .hero__visual {
     max-width: 480px;
-    margin: 0 auto;
+  }
+
+  .hero__glass-card {
+    margin-top: 20px;
+    padding: 18px 28px;
+    gap: 36px;
   }
 
   .collections-grid {
     grid-template-columns: repeat(2, 1fr);
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .about__content .section-label,
-  .about__content .section-title {
-    text-align: center;
-  }
-
-  .about__content .section-desc,
-  .about__text {
-    text-align: center;
-  }
-
-  .about__image {
-    max-width: 480px;
-    margin: 0 auto;
   }
 
   .why-grid {
@@ -115,6 +73,190 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  .about__pillars {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+/* ---------- 992px+ ---------- */
+@media (min-width: 992px) {
+  .section {
+    padding: 100px 0;
+  }
+
+  .navbar__logo-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar__logo-text {
+    font-size: 1.375rem;
+  }
+
+  .navbar__toggle {
+    display: none;
+  }
+
+  .navbar__nav {
+    display: flex;
+  }
+
+  .navbar__cta {
+    padding: 10px 20px;
+    font-size: 0.8125rem;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    text-align: left;
+  }
+
+  .hero__content {
+    text-align: left;
+  }
+
+  .hero__desc {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero__actions {
+    justify-content: flex-start;
+  }
+
+  .hero__stats {
+    justify-content: flex-start;
+  }
+
+  .hero__visual {
+    max-width: none;
+  }
+
+  .hero__image-wrap {
+    aspect-ratio: 4 / 5;
+    max-height: min(560px, 72vh);
+  }
+
+  .hero__glass-card {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+    margin-top: 0;
+    z-index: 4;
+    pointer-events: none;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+  }
+
+  .about__content .section-label,
+  .about__content .section-title,
+  .about__content .section-desc,
+  .about__text {
+    text-align: left;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery-masonry {
+    columns: 3;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  }
+
+  .timeline::before {
+    left: 50%;
+  }
+
+  .timeline__item {
+    flex-direction: row;
+    padding-left: 0;
+  }
+
+  .timeline__item:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+
+  .timeline__content {
+    width: calc(50% - 40px);
+    text-align: left;
+  }
+
+  .timeline__item:nth-child(even) .timeline__content {
+    text-align: right;
+  }
+
+  .timeline__dot {
+    left: 50%;
+  }
+}
+
+/* ---------- 1200px+ ---------- */
+@media (min-width: 1200px) {
+  .navbar__link {
+    padding: 8px 14px;
+    font-size: 0.875rem;
+  }
+
+  .navbar__nav {
+    gap: 6px;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .hero__grid {
+    gap: 60px;
+  }
+}
+
+/* ---------- 1440px+ ---------- */
+@media (min-width: 1440px) {
+  :root {
+    --container: 1320px;
+  }
+
+  .hero__title {
+    font-size: 4rem;
+  }
+}
+
+/* ---------- Mobile-only refinements ---------- */
+@media (max-width: 991px) {
   .timeline::before {
     left: 20px;
   }
@@ -135,70 +277,42 @@
     left: 20px;
   }
 
-  .gallery-masonry {
-    columns: 2;
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .about__content .section-label,
+  .about__content .section-title,
+  .about__text {
+    text-align: center;
+  }
+
+  .about__image {
+    max-width: 480px;
+    margin: 0 auto;
+    width: 100%;
   }
 
   .contact-grid {
     grid-template-columns: 1fr;
-    gap: 48px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
 
-  .footer-grid > :first-child {
-    grid-column: 1 / -1;
-  }
-}
-
-/* ---------- 768px (Tablet Portrait) ---------- */
-@media (max-width: 768px) {
-  :root {
-    --nav-height: 70px;
-  }
-
-  .section {
-    padding: 64px 0;
-  }
-
   .section-header {
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
-  .hero__stats {
-    gap: 24px;
-  }
-
-  .hero__stat-number {
-    font-size: 1.5rem;
-  }
-
-  .about__pillars {
-    grid-template-columns: 1fr;
-  }
-
-  .testimonial-card__inner {
-    padding: 32px 24px;
-  }
-
-  .testimonial-card__text {
-    font-size: 1.0625rem;
+  .testimonial-card {
+    padding: 0 4px;
   }
 
   .newsletter {
-    padding: 48px 32px;
+    padding: 40px 20px;
   }
 
   .newsletter__form {
     flex-direction: column;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
   }
 
   .footer__bottom {
@@ -208,80 +322,72 @@
   }
 }
 
-/* ---------- 480px (Mobile Landscape) ---------- */
-@media (max-width: 480px) {
+@media (max-width: 767px) {
+  :root {
+    --nav-height: 64px;
+  }
+
   .container {
     padding: 0 16px;
   }
 
-  .collections-grid {
-    grid-template-columns: 1fr;
+  .section {
+    padding: 56px 0;
   }
 
-  .why-grid {
-    grid-template-columns: 1fr;
-  }
-
+  .collections-grid,
+  .why-grid,
   .products-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .gallery-masonry {
     columns: 1;
   }
 
-  .hero__actions {
-    flex-direction: column;
-    align-items: center;
+  .about__pillars {
+    grid-template-columns: 1fr;
   }
 
-  .hero__actions .btn {
-    width: 100%;
-    max-width: 280px;
-  }
-
-  .hero__stats {
-    flex-direction: column;
-    gap: 16px;
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
   }
 
   .float-actions {
     bottom: 16px;
-    right: 16px;
+    right: 12px;
   }
 
   .back-to-top {
     bottom: 16px;
-    left: 16px;
+    left: 12px;
   }
 
   .float-btn {
     width: 46px;
     height: 46px;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
+  }
+
+  .hours-table td {
+    font-size: 0.8125rem;
+    padding: 8px 0;
   }
 }
 
-/* ---------- 320px (Small Mobile) ---------- */
-@media (max-width: 320px) {
-  .hero__title {
-    font-size: 2rem;
-  }
-
-  .section-title {
-    font-size: 1.625rem;
-  }
-
-  .btn {
-    padding: 12px 24px;
-    font-size: 0.8125rem;
-  }
-
+@media (max-width: 360px) {
   .navbar__logo-text {
-    font-size: 1.125rem;
+    font-size: 1.05rem;
   }
 
-  .testimonial-card__inner {
-    padding: 24px 16px;
+  .navbar__cta {
+    padding: 7px 10px;
+    font-size: 0.6875rem;
+  }
+
+  .hero__title {
+    font-size: 1.75rem;
   }
 }

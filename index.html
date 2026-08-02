@@ -113,14 +113,16 @@
         <a href="#gallery" class="navbar__link">Gallery</a>
         <a href="#faq" class="navbar__link">FAQ</a>
         <a href="#contact" class="navbar__link">Contact</a>
-        <a href="#contact" class="btn btn--primary btn--sm navbar__cta btn-glow">Book Visit</a>
       </nav>
 
-      <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
-        <span class="navbar__toggle-bar"></span>
-        <span class="navbar__toggle-bar"></span>
-        <span class="navbar__toggle-bar"></span>
-      </button>
+      <div class="navbar__actions">
+        <a href="#contact" class="btn btn--primary btn--sm navbar__cta btn-glow">Book Visit</a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+          <span class="navbar__toggle-bar"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -134,6 +136,7 @@
     <a href="#gallery" class="mobile-menu__link">Gallery</a>
     <a href="#faq" class="mobile-menu__link">FAQ</a>
     <a href="#contact" class="mobile-menu__link">Contact</a>
+    <a href="#contact" class="btn btn--primary btn-glow mobile-menu__cta">Book Visit</a>
   </nav>
 
   <main id="main-content">
@@ -147,7 +150,7 @@
       </div>
 
       <div class="container hero__grid">
-        <div class="hero__content reveal reveal--left">
+        <div class="hero__content">
           <span class="hero__subtitle">Where Tradition Meets Timeless Elegance</span>
           <h1 class="hero__title">
             Discover <em id="typingText">Timeless Elegance</em><br>in Every Creation
@@ -175,7 +178,7 @@
           </div>
         </div>
 
-        <div class="hero__visual reveal reveal--right">
+        <div class="hero__visual">
           <div class="hero__image-wrap">
             <div class="hero__placeholder" data-image="hero" role="img" aria-label="Luxury jewellery showcase">
               <svg class="hero__placeholder-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
@@ -185,16 +188,14 @@
               <span class="hero__placeholder-dim">Add assets/hero/hero.png</span>
             </div>
           </div>
-          <div class="hero__glass-card">
-            <div class="hero__stats">
-              <div class="hero__stat">
-                <div class="hero__stat-number">BIS</div>
-                <div class="hero__stat-label">Hallmarked</div>
-              </div>
-              <div class="hero__stat">
-                <div class="hero__stat-number">IGI</div>
-                <div class="hero__stat-label">Certified</div>
-              </div>
+          <div class="hero__glass-card" aria-label="Certifications">
+            <div class="hero__cert">
+              <span class="hero__cert-label">BIS</span>
+              <span class="hero__cert-text">Hallmarked</span>
+            </div>
+            <div class="hero__cert">
+              <span class="hero__cert-label">IGI</span>
+              <span class="hero__cert-text">Certified</span>
             </div>
           </div>
         </div>

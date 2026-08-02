@@ -177,7 +177,7 @@
   function handleResize() {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(() => {
-      if (window.innerWidth > 992) {
+      if (window.innerWidth >= 992) {
         toggleMobileMenu(true);
       }
     }, 250);
