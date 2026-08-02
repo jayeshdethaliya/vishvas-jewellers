@@ -1,160 +1,138 @@
-# Vishvas Jewellers – Premium Luxury Static Website
+# Vishvas Jewellers
 
-A production-ready, premium luxury jewellery website built with pure HTML5, CSS3, Tailwind Play CDN, and vanilla JavaScript. Hosted on GitHub Pages — no build step, no npm.
+Premium jewellery website — HTML, CSS, Tailwind Play CDN, vanilla JS. No npm, no build. Works on GitHub Pages.
 
 **Tagline:** Where Tradition Meets Timeless Elegance
 
 ---
 
-## Quick Start
+## Quick start
 
-1. Open the project folder
-2. Launch `index.html` in your browser
-3. No build step, no dependencies, no server required
+Open `index.html` in a browser, or serve locally:
 
 ```bash
-# Optional: serve locally (helpful for image loading checks)
 python -m http.server 8080
 ```
 
-Then visit `http://localhost:8080`
-
-### GitHub Pages
-
-Push this repo and enable Pages from the root (`/` / `main`). The site is fully static.
+GitHub Pages: publish from `/` on `main`.
 
 ---
 
-## Project Structure
+## How to update images
 
-```
-vishvas-jewellers/
-├── index.html
-├── css/
-│   ├── style.css
-│   ├── responsive.css
-│   └── animations.css
-├── js/
-│   ├── content.js          # Collections & products data (edit here)
-│   ├── images.js           # Auto-loads images by path / name
-│   ├── main.js
-│   ├── animations.js
-│   └── gallery.js
-├── assets/
-│   ├── hero/               # Hero image
-│   ├── about/              # Showroom / shop image
-│   ├── collections/        # Collection cover images ({slug}.png)
-│   ├── products/           # Product images ({collection}-{n}.png)
-│   ├── gallery/            # Gallery lightbox images
-│   └── svg/                # Logo & favicon
-└── README.md
-```
+Drop files into the folders below using the **exact names**. No HTML changes needed.
 
----
+Formats: `.png`, `.jpg`, `.jpeg`, or `.webp`  
+Missing file → placeholder stays.
 
-## Adding / Updating Images
+| What | Put file here |
+|------|----------------|
+| Hero | `assets/hero/hero.png` |
+| Shop / about | `assets/about/shop.png` |
+| Collection cover | `assets/collections/{name}.png` |
+| Product | `assets/products/{name}-1.png` |
+| Gallery | `assets/gallery/gallery-1.png` … `gallery-9.png` |
+| Logo / favicon | `assets/svg/logo.svg`, `favicon.svg` |
 
-Images load automatically from fixed paths. Supported formats (checked in order): `.png` → `.jpg` → `.jpeg` → `.webp`
+### Collection covers
 
-Missing files keep the placeholder.
-
-### Folder & file names
-
-| Section | Folder | Filename | Example |
-|---------|--------|----------|---------|
-| Hero | `assets/hero/` | `hero` | `assets/hero/hero.png` |
-| About / showroom | `assets/about/` | `shop` | `assets/about/shop.png` |
-| Collections | `assets/collections/` | `{slug}` | `assets/collections/gold-rings.png` |
-| Products | `assets/products/` | `{collection}-{n}` | `assets/products/necklaces-1.png` |
-| Gallery | `assets/gallery/` | `gallery-{n}` | `assets/gallery/gallery-1.webp` |
-
-### Collections
-
-Edit the list in `js/content.js` (`COLLECTIONS` array). Add / update / delete items there — cards and footer links update automatically.
-
-Cover image path: `assets/collections/{slug}.png`
-
-| Slug | Cover file |
-|------|------------|
-| `gold-rings` | `gold-rings.png` |
-| `necklaces` | `necklaces.png` |
-| `bracelets` | `bracelets.png` |
-| `earrings` | `earrings.png` |
-| `diamond` | `diamond.png` |
-| `bridal` | `bridal.png` |
-| `mens` | `mens.png` |
-| `custom` | `custom.png` |
+| Name | File |
+|------|------|
+| Gold Rings | `assets/collections/gold-rings.png` |
+| Necklaces | `assets/collections/necklaces.png` |
+| Bracelets | `assets/collections/bracelets.png` |
+| Earrings | `assets/collections/earrings.png` |
+| Diamond | `assets/collections/diamond.png` |
+| Bridal | `assets/collections/bridal.png` |
+| Men's | `assets/collections/mens.png` |
+| Custom | `assets/collections/custom.png` |
 
 ### Products
 
-Edit `PRODUCTS` in `js/content.js`. Each product belongs to a collection slug; the image name is always `{collection}-{n}`.
+Name = collection + number:
 
-| File | Meaning |
-|------|---------|
-| `necklaces-1.png` | Necklaces product #1 |
-| `gold-rings-1.png` | Gold Rings product #1 |
-| `bracelets-1.png` | Bracelets product #1 |
-| `bridal-1.png` | Bridal product #1 |
-| `earrings-1.png` | Earrings product #1 |
-| `mens-1.png` | Men's product #1 |
+`assets/products/necklaces-1.png`  
+`assets/products/gold-rings-1.png`  
+`assets/products/bracelets-1.png`  
+`assets/products/bridal-1.png`  
+`assets/products/earrings-1.png`  
+`assets/products/mens-1.png`
 
-Add more with the same pattern: `necklaces-2.png`, `bridal-2.png`, etc., and a matching entry in `PRODUCTS`.
+More items: `necklaces-2.png`, etc. Also add a row in `js/content.js` → `PRODUCTS`.
 
 ### Gallery
 
-| File | Title |
-|------|-------|
-| `gallery-1` | Bridal Necklace Set |
-| `gallery-2` | Heritage Gold Bangle |
-| `gallery-3` | Solitaire Ring |
-| `gallery-4` | Showroom Interior |
-| `gallery-5` | Temple Jewellery Set |
-| `gallery-6` | Bridal Choker |
-| `gallery-7` | Diamond Earrings |
-| `gallery-8` | Craftsmanship Workshop |
-| `gallery-9` | Antique Gold Pendant |
+`gallery-1.png` … `gallery-9.png` in `assets/gallery/`
 
 ### Tips
 
-- Prefer compressed JPG/WebP for large photos
-- Suggested sizes: hero ~1200×1500, collections/products ~800×800, gallery ~1200px long edge
-- Replace an image by overwriting the same filename
-- Logo / favicon: `assets/svg/logo.svg`, `assets/svg/favicon.svg`
+- Overwrite the same filename to replace an image
+- Prefer JPG/WebP for large photos
+- Sizes: hero ~1200×1500 · cards ~800×800 · gallery ~1200px wide
+
+### Add / remove a collection
+
+Edit `COLLECTIONS` in `js/content.js`, then add or remove `assets/collections/{slug}.png`.
+
+---
+
+## Project structure
+
+```
+├── index.html
+├── css/          style, responsive, animations
+├── js/
+│   ├── content.js    ← collections & products list
+│   ├── images.js     ← loads images by filename
+│   ├── main.js
+│   ├── animations.js
+│   └── gallery.js
+└── assets/
+    ├── hero/
+    ├── about/
+    ├── collections/
+    ├── products/
+    ├── gallery/
+    └── svg/
+```
 
 ---
 
 ## Features
 
-- Luxury gold palette with glassmorphism nav
-- Tailwind CSS via Play CDN (utilities only; preflight off)
-- JS-driven collections & products with dynamic images
-- Sticky nav, scroll spy, mobile menu
-- Filterable gallery + lightbox
-- FAQ accordion, contact & newsletter forms
+- Mobile-first layout, sticky nav, mobile menu
+- Collections & products from JS + auto images
+- Gallery filters + lightbox
+- FAQ, contact, newsletter
 - SEO meta, Open Graph, JSON-LD
+- Tailwind Play CDN (utilities; preflight off)
 
 ---
 
-## Color Palette
+## Colours
 
 | Name | Hex |
 |------|-----|
-| Primary Gold | `#D4AF37` |
-| Dark Gold | `#B8891D` |
-| Luxury Black | `#111111` |
+| Gold | `#D4AF37` |
+| Dark gold | `#B8891D` |
+| Black | `#111111` |
 | Ivory | `#F8F5F0` |
 
----
-
-## Customisation
-
-- Brand / contact: `index.html` (contact, footer, structured data)
-- Collections & products: `js/content.js`
-- Colors: CSS variables in `css/style.css` under `:root`
+Edit variables in `css/style.css` → `:root`.
 
 ---
 
-## Browser Support
+## Other edits
+
+| Change | File |
+|--------|------|
+| Contact, address, phone | `index.html` |
+| Collections / products text | `js/content.js` |
+| Colours | `css/style.css` |
+
+---
+
+## Browsers
 
 Chrome 90+, Firefox 88+, Safari 14+, Edge 90+
 
