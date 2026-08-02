@@ -59,17 +59,27 @@
   galleryItems.forEach((item) => galleryObserver.observe(item));
 
   /* ---------- Lightbox ---------- */
-  function openLightbox(title) {
+  function openLightbox(item) {
     if (!lightbox || !lightboxContent) return;
 
-    lightboxContent.innerHTML =
-      '<div class="lightbox__placeholder placeholder placeholder--dark">' +
-      '<svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">' +
-      '<path d="M24 8L28 18H38L30 24L33 34L24 28L15 34L18 24L10 18H20L24 8Z" fill="rgba(212,175,55,0.3)"/>' +
-      '</svg>' +
-      '<span class="placeholder__label">' + (title || 'Jewellery Image') + '</span>' +
-      '<span class="placeholder__dim">Replace with jewellery image</span>' +
-      '</div>';
+    const title = item.getAttribute('data-title') || 'Gallery Image';
+    const slot = item.querySelector('[data-image]');
+    const src = slot ? slot.getAttribute('data-src') : null;
+
+    if (src) {
+      lightboxContent.innerHTML =
+        '<img class="lightbox__img" src="' + src + '" alt="' + title + '">' +
+        '<p class="lightbox__caption">' + title + '</p>';
+    } else {
+      lightboxContent.innerHTML =
+        '<div class="lightbox__placeholder placeholder placeholder--dark">' +
+        '<svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true">' +
+        '<path d="M24 8L28 18H38L30 24L33 34L24 28L15 34L18 24L10 18H20L24 8Z" fill="rgba(212,175,55,0.3)"/>' +
+        '</svg>' +
+        '<span class="placeholder__label">' + title + '</span>' +
+        '<span class="placeholder__dim">Add matching gallery image</span>' +
+        '</div>';
+    }
 
     lightbox.classList.add('lightbox--open');
     lightbox.setAttribute('aria-hidden', 'false');
@@ -86,8 +96,7 @@
 
   galleryItems.forEach((item) => {
     item.addEventListener('click', () => {
-      const title = item.getAttribute('data-title') || 'Gallery Image';
-      openLightbox(title);
+      openLightbox(item);
     });
 
     item.setAttribute('role', 'button');
@@ -95,8 +104,7 @@
     item.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         e.preventDefault();
-        const title = item.getAttribute('data-title') || 'Gallery Image';
-        openLightbox(title);
+        openLightbox(item);
       }
     });
   });
@@ -111,28 +119,5 @@
     if (e.key === 'Escape' && lightbox?.classList.contains('lightbox--open')) {
       closeLightbox();
     }
-  });
-
-  /* ---------- Lazy-Ready Structure ---------- */
-  document.querySelectorAll('[data-lazy]').forEach((el) => {
-    const src = el.getAttribute('data-lazy');
-    if (!src) return;
-
-    const lazyObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            if (el.tagName === 'IMG') {
-              el.src = src;
-              el.removeAttribute('data-lazy');
-            }
-            lazyObserver.unobserve(el);
-          }
-        });
-      },
-      { rootMargin: '200px' }
-    );
-
-    lazyObserver.observe(el);
   });
 })();

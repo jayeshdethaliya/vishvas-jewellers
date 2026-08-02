@@ -16,11 +16,13 @@
   <meta property="og:url" content="https://www.vishvasjewellers.com/">
   <meta property="og:site_name" content="Vishvas Jewellers">
   <meta property="og:locale" content="en_IN">
+  <meta property="og:image" content="assets/hero/hero.png">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vishvas Jewellers | Where Tradition Meets Timeless Elegance">
   <meta name="twitter:description" content="Premium gold, diamond, and bridal jewellery crafted with hallmarked purity and timeless elegance.">
+  <meta name="twitter:image" content="assets/hero/hero.png">
 
   <title>Vishvas Jewellers | Where Tradition Meets Timeless Elegance</title>
 
@@ -28,6 +30,26 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: { DEFAULT: '#D4AF37', dark: '#B8891D' },
+            ivory: '#F8F5F0',
+            luxury: '#111111'
+          },
+          fontFamily: {
+            display: ['Playfair Display', 'Georgia', 'serif'],
+            body: ['Poppins', 'sans-serif']
+          }
+        }
+      },
+      corePlugins: { preflight: false }
+    };
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animations.css">
@@ -155,12 +177,12 @@
 
         <div class="hero__visual reveal reveal--right">
           <div class="hero__image-wrap">
-            <div class="hero__placeholder" role="img" aria-label="Luxury jewellery showcase placeholder">
+            <div class="hero__placeholder" data-image="hero" role="img" aria-label="Luxury jewellery showcase">
               <svg class="hero__placeholder-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
                 <path d="M32 8L38 24H56L42 34L48 50L32 40L16 50L22 34L8 24H26L32 8Z" fill="rgba(212,175,55,0.35)" stroke="rgba(212,175,55,0.5)" stroke-width="1"/>
               </svg>
               <span class="hero__placeholder-text">Luxury Placeholder</span>
-              <span class="hero__placeholder-dim">1200 × 800 — Replace with jewellery image</span>
+              <span class="hero__placeholder-dim">Add assets/hero/hero.png</span>
             </div>
           </div>
           <div class="hero__glass-card">
@@ -188,127 +210,7 @@
           <p class="section-desc">From everyday elegance to once-in-a-lifetime celebrations, explore our meticulously crafted collections designed to complement every moment.</p>
         </header>
 
-        <div class="collections-grid">
-          <article class="collection-card reveal reveal--up reveal-delay-1 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Gold Rings collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="14" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="none"/><circle cx="24" cy="20" r="4" fill="rgba(212,175,55,0.3)"/></svg>
-                <span class="placeholder__label">Gold Rings</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Gold Rings</h3>
-              <p class="collection-card__desc">Classic bands and statement rings crafted in 22K hallmarked gold for engagements, weddings, and everyday grace.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-2 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Necklaces collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 12C8 12 14 28 24 28C34 28 40 12 40 12" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="none"/><circle cx="24" cy="32" r="5" fill="rgba(212,175,55,0.3)"/></svg>
-                <span class="placeholder__label">Necklaces</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Necklaces</h3>
-              <p class="collection-card__desc">From delicate chains to grand haars, each necklace is designed to frame your elegance with refined artistry.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-3 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Bracelets collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><ellipse cx="24" cy="24" rx="18" ry="10" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="none"/></svg>
-                <span class="placeholder__label">Bracelets</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Bracelets</h3>
-              <p class="collection-card__desc">Kadas, bangles, and cuff bracelets that blend traditional motifs with contemporary silhouettes.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-4 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Earrings collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8V18M18 22C18 22 20 32 24 32C28 32 30 22 30 22" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="none"/></svg>
-                <span class="placeholder__label">Earrings</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Earrings</h3>
-              <p class="collection-card__desc">Studs, jhumkas, and chandelier earrings that capture light and attention with every graceful movement.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-5 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Diamond Jewellery collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 6L36 18L24 42L12 18L24 6Z" stroke="rgba(184,137,29,0.4)" stroke-width="1.5" fill="rgba(212,175,55,0.15)"/></svg>
-                <span class="placeholder__label">Diamond Jewellery</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Diamond Jewellery</h3>
-              <p class="collection-card__desc">IGI-certified diamonds set in exquisite designs that celebrate brilliance, clarity, and lasting value.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-6 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Bridal Collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4L28 16H40L30 24L34 36L24 28L14 36L18 24L8 16H20L24 4Z" fill="rgba(212,175,55,0.2)" stroke="rgba(184,137,29,0.4)"/></svg>
-                <span class="placeholder__label">Bridal Collection</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Bridal Collection</h3>
-              <p class="collection-card__desc">Complete bridal sets with mangalsutras, chokers, and heritage pieces for your most cherished day.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-7 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Men's Jewellery collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="14" y="18" width="20" height="14" rx="3" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="none"/><line x1="24" y1="18" x2="24" y2="10" stroke="rgba(184,137,29,0.4)" stroke-width="2"/></svg>
-                <span class="placeholder__label">Men's Jewellery</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Men's Jewellery</h3>
-              <p class="collection-card__desc">Bold chains, kada bracelets, and rings designed for the modern gentleman who values understated luxury.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-
-          <article class="collection-card reveal reveal--up reveal-delay-8 hover-lift">
-            <div class="collection-card__image">
-              <div class="placeholder" role="img" aria-label="Custom Designs collection placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M12 36L24 12L36 36H12Z" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="rgba(212,175,55,0.1)"/></svg>
-                <span class="placeholder__label">Custom Designs</span>
-                <span class="placeholder__dim">Replace with image</span>
-              </div>
-            </div>
-            <div class="collection-card__body">
-              <h3 class="collection-card__title">Custom Designs</h3>
-              <p class="collection-card__desc">Bring your vision to life with our bespoke design service, from initial sketch to finished masterpiece.</p>
-              <span class="collection-card__link">View Collection →</span>
-            </div>
-          </article>
-        </div>
+        <div class="collections-grid" id="collectionsGrid"></div>
       </div>
     </section>
 
@@ -317,10 +219,10 @@
       <div class="container">
         <div class="about-grid">
           <div class="about__image reveal reveal--left">
-            <div class="placeholder" role="img" aria-label="Vishvas Jewellers showroom placeholder">
+            <div class="placeholder" data-image="shop" role="img" aria-label="Vishvas Jewellers showroom">
               <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="6" y="14" width="36" height="24" rx="2" stroke="rgba(184,137,29,0.4)" stroke-width="2" fill="rgba(212,175,55,0.1)"/><rect x="20" y="22" width="8" height="16" fill="rgba(212,175,55,0.2)"/></svg>
               <span class="placeholder__label">Our Showroom</span>
-              <span class="placeholder__dim">Replace with image</span>
+              <span class="placeholder__dim">shop.png</span>
             </div>
           </div>
 
@@ -420,100 +322,7 @@
           <p class="section-desc">A curated showcase of our most admired creations — each piece a testament to refined taste and masterful artistry.</p>
         </header>
 
-        <div class="products-grid">
-          <article class="product-card reveal reveal--up reveal-delay-1 hover-lift">
-            <div class="product-card__image">
-              <span class="product-card__badge">Bestseller</span>
-              <div class="placeholder" role="img" aria-label="Royal Heritage Gold Necklace placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 14C8 14 14 30 24 30C34 30 40 14 40 14" stroke="rgba(184,137,29,0.4)" stroke-width="2"/><circle cx="24" cy="34" r="4" fill="rgba(212,175,55,0.3)"/></svg>
-                <span class="placeholder__label">Royal Heritage Necklace</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Necklaces</span>
-              <h3 class="product-card__name">Royal Heritage Gold Necklace</h3>
-              <p class="product-card__price">₹2,45,000 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal--up reveal-delay-2 hover-lift">
-            <div class="product-card__image">
-              <span class="product-card__badge">New</span>
-              <div class="placeholder" role="img" aria-label="Eternity Diamond Ring placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="14" stroke="rgba(184,137,29,0.4)" stroke-width="2"/><circle cx="24" cy="20" r="5" fill="rgba(212,175,55,0.3)"/></svg>
-                <span class="placeholder__label">Eternity Diamond Ring</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Rings</span>
-              <h3 class="product-card__name">Eternity Diamond Ring</h3>
-              <p class="product-card__price">₹1,85,000 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal--up reveal-delay-3 hover-lift">
-            <div class="product-card__image">
-              <div class="placeholder" role="img" aria-label="Imperial Kada Bracelet placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><ellipse cx="24" cy="24" rx="16" ry="9" stroke="rgba(184,137,29,0.4)" stroke-width="2"/></svg>
-                <span class="placeholder__label">Imperial Kada</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Bracelets</span>
-              <h3 class="product-card__name">Imperial Kada Bracelet</h3>
-              <p class="product-card__price">₹98,500 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal--up reveal-delay-4 hover-lift">
-            <div class="product-card__image">
-              <span class="product-card__badge">Bridal</span>
-              <div class="placeholder" role="img" aria-label="Regal Bridal Set placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 4L28 16H40L30 24L34 36L24 28L14 36L18 24L8 16H20L24 4Z" fill="rgba(212,175,55,0.2)"/></svg>
-                <span class="placeholder__label">Regal Bridal Set</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Bridal</span>
-              <h3 class="product-card__name">Regal Bridal Set</h3>
-              <p class="product-card__price">₹8,75,000 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal--up reveal-delay-5 hover-lift">
-            <div class="product-card__image">
-              <div class="placeholder" role="img" aria-label="Celestial Jhumka Earrings placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M24 8V16M20 20C20 20 22 34 24 34C26 34 28 20 28 20" stroke="rgba(184,137,29,0.4)" stroke-width="2"/></svg>
-                <span class="placeholder__label">Celestial Jhumkas</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Earrings</span>
-              <h3 class="product-card__name">Celestial Jhumka Earrings</h3>
-              <p class="product-card__price">₹72,000 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-
-          <article class="product-card reveal reveal--up reveal-delay-6 hover-lift">
-            <div class="product-card__image">
-              <div class="placeholder" role="img" aria-label="Sovereign Men's Chain placeholder">
-                <svg class="placeholder__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><rect x="14" y="18" width="20" height="12" rx="2" stroke="rgba(184,137,29,0.4)" stroke-width="2"/><line x1="24" y1="18" x2="24" y2="10" stroke="rgba(184,137,29,0.4)" stroke-width="2"/></svg>
-                <span class="placeholder__label">Sovereign Chain</span>
-              </div>
-            </div>
-            <div class="product-card__body">
-              <span class="product-card__category">Men's</span>
-              <h3 class="product-card__name">Sovereign Men's Chain</h3>
-              <p class="product-card__price">₹1,20,000 <span> onwards</span></p>
-              <a href="#contact" class="btn btn--dark-outline btn--sm">View Details</a>
-            </div>
-          </article>
-        </div>
+        <div class="products-grid" id="productsGrid"></div>
       </div>
     </section>
 
@@ -676,56 +485,56 @@
 
         <div class="gallery-masonry" role="list">
           <div class="gallery-item gallery-item--tall" data-category="bridal" data-title="Bridal Necklace Set" role="listitem">
-            <div class="placeholder" role="img" aria-label="Bridal necklace set placeholder">
+            <div class="placeholder" data-image="gallery-1" role="img" aria-label="Bridal necklace set">
               <span class="placeholder__label">Bridal Necklace Set</span>
-              <span class="placeholder__dim">Replace with image</span>
+              <span class="placeholder__dim">gallery-1.png</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--square" data-category="gold" data-title="Heritage Gold Bangle" role="listitem">
-            <div class="placeholder" role="img" aria-label="Heritage gold bangle placeholder">
+            <div class="placeholder" data-image="gallery-2" role="img" aria-label="Heritage gold bangle">
               <span class="placeholder__label">Heritage Gold Bangle</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--wide" data-category="diamond" data-title="Solitaire Ring" role="listitem">
-            <div class="placeholder" role="img" aria-label="Solitaire ring placeholder">
+            <div class="placeholder" data-image="gallery-3" role="img" aria-label="Solitaire ring">
               <span class="placeholder__label">Solitaire Ring</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--square" data-category="showroom" data-title="Showroom Interior" role="listitem">
-            <div class="placeholder placeholder--dark" role="img" aria-label="Showroom interior placeholder">
+            <div class="placeholder placeholder--dark" data-image="gallery-4" role="img" aria-label="Showroom interior">
               <span class="placeholder__label">Showroom Interior</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--tall" data-category="gold" data-title="Temple Jewellery Set" role="listitem">
-            <div class="placeholder" role="img" aria-label="Temple jewellery set placeholder">
+            <div class="placeholder" data-image="gallery-5" role="img" aria-label="Temple jewellery set">
               <span class="placeholder__label">Temple Jewellery Set</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--wide" data-category="bridal" data-title="Bridal Choker" role="listitem">
-            <div class="placeholder" role="img" aria-label="Bridal choker placeholder">
+            <div class="placeholder" data-image="gallery-6" role="img" aria-label="Bridal choker">
               <span class="placeholder__label">Bridal Choker</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--square" data-category="diamond" data-title="Diamond Earrings" role="listitem">
-            <div class="placeholder" role="img" aria-label="Diamond earrings placeholder">
+            <div class="placeholder" data-image="gallery-7" role="img" aria-label="Diamond earrings">
               <span class="placeholder__label">Diamond Earrings</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--tall" data-category="showroom" data-title="Craftsmanship Workshop" role="listitem">
-            <div class="placeholder placeholder--dark" role="img" aria-label="Craftsmanship workshop placeholder">
+            <div class="placeholder placeholder--dark" data-image="gallery-8" role="img" aria-label="Craftsmanship workshop">
               <span class="placeholder__label">Craftsmanship Workshop</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
           </div>
           <div class="gallery-item gallery-item--square" data-category="gold" data-title="Antique Gold Pendant" role="listitem">
-            <div class="placeholder" role="img" aria-label="Antique gold pendant placeholder">
+            <div class="placeholder" data-image="gallery-9" role="img" aria-label="Antique gold pendant">
               <span class="placeholder__label">Antique Gold Pendant</span>
             </div>
             <div class="gallery-item__overlay"><span class="gallery-item__overlay-icon" aria-hidden="true">+</span></div>
@@ -921,12 +730,7 @@
 
         <div>
           <h3 class="footer__heading">Collections</h3>
-          <a href="#collections" class="footer__link">Gold Rings</a>
-          <a href="#collections" class="footer__link">Necklaces</a>
-          <a href="#collections" class="footer__link">Diamond Jewellery</a>
-          <a href="#collections" class="footer__link">Bridal Collection</a>
-          <a href="#collections" class="footer__link">Men's Jewellery</a>
-          <a href="#collections" class="footer__link">Custom Designs</a>
+          <div id="footerCollections"></div>
         </div>
 
         <div>
@@ -960,6 +764,8 @@
     <button class="lightbox__close" id="lightboxClose" aria-label="Close lightbox">&times;</button>
   </div>
 
+  <script src="js/content.js" defer></script>
+  <script src="js/images.js" defer></script>
   <script src="js/main.js" defer></script>
   <script src="js/animations.js" defer></script>
   <script src="js/gallery.js" defer></script>
