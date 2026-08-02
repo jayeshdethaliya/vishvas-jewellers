@@ -1,0 +1,332 @@
+/* ============================================
+   Vishvas Jewellers – Animations
+   ============================================ */
+
+/* ---------- Keyframes ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes rotateIn {
+  from {
+    opacity: 0;
+    transform: rotate(-8deg) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes pulse-gold {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(212, 175, 55, 0);
+  }
+}
+
+@keyframes heroShapeDrift {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(20px, -15px) rotate(3deg);
+  }
+  66% {
+    transform: translate(-10px, 10px) rotate(-2deg);
+  }
+}
+
+@keyframes typingBlink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ---------- Scroll Reveal Base ---------- */
+.reveal {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal--up {
+  transform: translateY(40px);
+}
+
+.reveal--left {
+  transform: translateX(-40px);
+}
+
+.reveal--right {
+  transform: translateX(40px);
+}
+
+.reveal--scale {
+  transform: scale(0.9);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Stagger Delays ---------- */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+.reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
+.reveal-delay-8 { transition-delay: 0.8s; }
+
+/* ---------- Hero Animations ---------- */
+.hero__bg-shape--1 {
+  animation: heroShapeDrift 20s ease-in-out infinite;
+}
+
+.hero__bg-shape--2 {
+  animation: heroShapeDrift 25s ease-in-out infinite reverse;
+}
+
+.hero__bg-shape--3 {
+  animation: float 8s ease-in-out infinite;
+}
+
+.hero__content.reveal {
+  animation: fadeLeft 1s ease forwards;
+}
+
+.hero__visual.reveal {
+  animation: fadeRight 1s ease 0.2s forwards;
+}
+
+/* ---------- Gold Shimmer Button ---------- */
+.btn--shimmer {
+  background-size: 200% auto;
+  background-image: linear-gradient(
+    90deg,
+    #B8891D 0%,
+    #E5C45A 25%,
+    #D4AF37 50%,
+    #E5C45A 75%,
+    #B8891D 100%
+  );
+  animation: shimmer 3s linear infinite;
+}
+
+/* ---------- Card Hover Lift ---------- */
+.hover-lift {
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.hover-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ---------- Button Glow ---------- */
+.btn-glow:hover {
+  animation: pulse-gold 1.5s ease infinite;
+}
+
+/* ---------- Typing Cursor ---------- */
+.typing-cursor::after {
+  content: '|';
+  animation: typingBlink 0.8s step-end infinite;
+  color: var(--gold);
+  margin-left: 2px;
+}
+
+/* ---------- Parallax Layer ---------- */
+.parallax-layer {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* ---------- Gallery Item Reveal ---------- */
+.gallery-item {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.gallery-item--visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.gallery-item--hidden {
+  display: none;
+}
+
+/* ---------- Timeline Animation ---------- */
+.timeline__item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.timeline__item--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- Counter Animation ---------- */
+.counter {
+  display: inline-block;
+}
+
+/* ---------- Navbar Transition ---------- */
+.navbar {
+  transition: background 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+/* ---------- Mobile Menu Animation ---------- */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 17, 17, 0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.mobile-menu--open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu__link {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--white);
+  padding: 12px 24px;
+  transition: color var(--transition);
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.mobile-menu--open .mobile-menu__link {
+  animation: fadeUp 0.5s ease forwards;
+}
+
+.mobile-menu--open .mobile-menu__link:nth-child(1) { animation-delay: 0.1s; }
+.mobile-menu--open .mobile-menu__link:nth-child(2) { animation-delay: 0.15s; }
+.mobile-menu--open .mobile-menu__link:nth-child(3) { animation-delay: 0.2s; }
+.mobile-menu--open .mobile-menu__link:nth-child(4) { animation-delay: 0.25s; }
+.mobile-menu--open .mobile-menu__link:nth-child(5) { animation-delay: 0.3s; }
+.mobile-menu--open .mobile-menu__link:nth-child(6) { animation-delay: 0.35s; }
+.mobile-menu--open .mobile-menu__link:nth-child(7) { animation-delay: 0.4s; }
+.mobile-menu--open .mobile-menu__link:nth-child(8) { animation-delay: 0.45s; }
+
+.mobile-menu__link:hover {
+  color: var(--gold);
+}
+
+/* ---------- Placeholder Shimmer ---------- */
+.placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 60%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* ---------- Reduced Motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}

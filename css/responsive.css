@@ -1,0 +1,287 @@
+/* ============================================
+   Vishvas Jewellers – Responsive Styles
+   Breakpoints: 320, 480, 768, 992, 1200, 1440
+   ============================================ */
+
+/* ---------- 1440px+ ---------- */
+@media (min-width: 1440px) {
+  :root {
+    --container: 1320px;
+  }
+
+  .hero__title {
+    font-size: 4.25rem;
+  }
+}
+
+/* ---------- 1200px ---------- */
+@media (max-width: 1200px) {
+  .collections-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+  }
+
+  .footer-grid > :last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- 992px (Tablet Landscape) ---------- */
+@media (max-width: 992px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .navbar__nav {
+    display: none;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+
+  .hero__desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__actions {
+    justify-content: center;
+  }
+
+  .hero__stats {
+    justify-content: center;
+  }
+
+  .hero__glass-card {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: -40px;
+    display: inline-block;
+  }
+
+  .hero__visual {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .collections-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .about__content .section-label,
+  .about__content .section-title {
+    text-align: center;
+  }
+
+  .about__content .section-desc,
+  .about__text {
+    text-align: center;
+  }
+
+  .about__image {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline__item,
+  .timeline__item:nth-child(even) {
+    flex-direction: row;
+    padding-left: 48px;
+  }
+
+  .timeline__content,
+  .timeline__item:nth-child(even) .timeline__content {
+    width: 100%;
+    text-align: left;
+  }
+
+  .timeline__dot {
+    left: 20px;
+  }
+
+  .gallery-masonry {
+    columns: 2;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-grid > :first-child {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- 768px (Tablet Portrait) ---------- */
+@media (max-width: 768px) {
+  :root {
+    --nav-height: 70px;
+  }
+
+  .section {
+    padding: 64px 0;
+  }
+
+  .section-header {
+    margin-bottom: 48px;
+  }
+
+  .hero__stats {
+    gap: 24px;
+  }
+
+  .hero__stat-number {
+    font-size: 1.5rem;
+  }
+
+  .about__pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .testimonial-card__inner {
+    padding: 32px 24px;
+  }
+
+  .testimonial-card__text {
+    font-size: 1.0625rem;
+  }
+
+  .newsletter {
+    padding: 48px 32px;
+  }
+
+  .newsletter__form {
+    flex-direction: column;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}
+
+/* ---------- 480px (Mobile Landscape) ---------- */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .collections-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-masonry {
+    columns: 1;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero__stats {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .float-actions {
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .back-to-top {
+    bottom: 16px;
+    left: 16px;
+  }
+
+  .float-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 1.1rem;
+  }
+}
+
+/* ---------- 320px (Small Mobile) ---------- */
+@media (max-width: 320px) {
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .section-title {
+    font-size: 1.625rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.8125rem;
+  }
+
+  .navbar__logo-text {
+    font-size: 1.125rem;
+  }
+
+  .testimonial-card__inner {
+    padding: 24px 16px;
+  }
+}
