@@ -31,7 +31,7 @@ Missing file → placeholder stays.
 | Shop / about | `assets/about/shop.png` |
 | Collection cover | `assets/collections/{name}.png` |
 | Product | `assets/products/{name}-1.png` |
-| Gallery | `assets/gallery/gallery-1.png` … `gallery-9.png` |
+| Gallery | `assets/gallery/gallery-1.png`.png` |
 | Logo / favicon | `assets/svg/logo.svg`, `favicon.svg` |
 
 ### Collection covers
@@ -113,7 +113,7 @@ Edit `COLLECTIONS` in `js/content.js`, then add or remove `assets/collections/{s
 
 | Name | Hex |
 |------|-----|
-| Gold | `#D4AF37` |
+| Gold | `24ct` |
 | Dark gold | `#B8891D` |
 | Black | `#111111` |
 | Ivory | `#F8F5F0` |
