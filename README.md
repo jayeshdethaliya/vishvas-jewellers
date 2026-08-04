@@ -1,4 +1,4 @@
-# VishvasJewellers
+# Vishvas Jewellers
 
 Premium jewellery website — HTML, CSS, Tailwind Play CDN, vanilla JS. No npm, no build. Works on GitHub Pages.
 
