@@ -114,8 +114,8 @@ Edit `COLLECTIONS` in `js/content.js`, then add or remove `assets/collections/{s
 | Name | Hex |
 |------|-----|
 | Gold | `24ct` |
-| Dark gold | `#B8891D` |
-| Black | `#111111` |
+| dagina gold | `22ct` |
+| rose gold | `18ct` |
 | Ivory | `#F8F5F0` |
 
 Edit variables in `css/style.css` → `:root`.
