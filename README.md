@@ -62,7 +62,7 @@ More items: `necklaces-2.png`, etc. Also add a row in `js/content.js` → `PRODU
 
 ### Gallery
 
-`gallery-A1.png` … in `assets/gallery/`
+'photo-1.png` … in `assets/gallery/`
 
 ### Tips
 
